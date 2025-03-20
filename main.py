@@ -43,11 +43,11 @@ def array_to_progression(array):
     return best_array
 
 files = {
-    "arr1.txt": "1 2 3 4 5",
+    "arr1.txt": "1.08 2 3 4.7 5",
     "arr2.txt": "-1 -2 -30 -4 -5",
     "arr3.txt": "",
     "arr4.txt": "1 16 4 10 7 11 1 -2",
-    "arr5.txt": "51 38 10 38 4 52",
+    "arr5.txt": "51afuhafh 38 10 38 4 52",
     "arr6.txt": "1 2",
 }
 
@@ -56,7 +56,12 @@ for filename, content in files.items():
         file.write(content)
 
 for filename in files.keys():
-    array = read_array(filename)
+    try:
+        array = read_array(filename)
+    except ValueError:
+        print("SUK")
+        continue
+
     print(f"Исходный массив из {filename}: {array}")
 
     progression = array_to_progression(array)
