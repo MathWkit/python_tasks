@@ -22,7 +22,6 @@ def cyclic_shift(matrix, n, setting):
     elif setting == 'c':
         n = n % len(matrix[0])
         return [row[-n:] + row[:-n] for row in matrix]
-        return
     else:
         print("Настройка должна быть r (rows) или c (columns)")
 
