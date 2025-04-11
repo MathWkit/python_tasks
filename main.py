@@ -59,7 +59,7 @@ for filename in files.keys():
     try:
         array = read_array(filename)
     except ValueError:
-        print("SUK")
+        print("Неверные входные данные\n")
         continue
 
     print(f"Исходный массив из {filename}: {array}")
